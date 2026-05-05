@@ -1,0 +1,83 @@
+============================================================
+  PANDUAN INSTALASI - HAND GESTURE RECOGNITION
+============================================================
+
+LANGKAH 1: INSTALL PYTHON
+--------------------------
+Download Python 3.11 dari:
+https://www.python.org/downloads/release/python-3119/
+
+>> Pilih: "Windows installer (64-bit)"
+>> PENTING: Saat instalasi, CENTANG "Add Python to PATH"
+
+
+LANGKAH 2: INSTALL LIBRARY
+----------------------------
+Buka Command Prompt (CMD) lalu jalankan perintah ini
+SATU PER SATU:
+
+  pip install opencv-python==4.9.0.80
+  pip install mediapipe==0.10.9
+  pip install Pillow==10.3.0
+  pip install numpy==1.26.4
+
+Tunggu tiap perintah selesai sebelum lanjut ke berikutnya.
+
+
+LANGKAH 3: STRUKTUR FOLDER
+----------------------------
+Pastikan semua file ada dalam SATU folder yang sama:
+
+  📁 folder_kamu/
+     ├── main.py
+     ├── hand_detector.py
+     ├── gesture_drawer.py
+     └── config.py
+
+
+LANGKAH 4: JALANKAN PROGRAM
+-----------------------------
+Buka CMD, masuk ke folder kamu:
+
+  cd C:\Users\velas\Downloads\files
+
+Lalu jalankan:
+
+  python main.py
+
+
+LANGKAH 5: CARA PAKAI
+-----------------------
+- Hadapkan tangan ke kamera
+- Program akan mendeteksi jari secara otomatis
+- Tekan "q" untuk keluar
+
+
+TROUBLESHOOTING
+---------------
+
+Error: "No module named 'mediapipe'"
+  → Jalankan: pip install mediapipe==0.10.9
+
+Error: "No module named 'cv2'"
+  → Jalankan: pip install opencv-python==4.9.0.80
+
+Error: "Camera not found" / webcam tidak terbuka
+  → Pastikan webcam tidak dipakai aplikasi lain (Zoom, Teams, dll)
+  → Coba ganti VideoCapture(0) ke VideoCapture(1) di main.py
+
+Error: AttributeError 'mediapipe' has no attribute 'solutions'
+  → Kamu pakai mediapipe versi terlalu baru
+  → Jalankan:
+      pip uninstall mediapipe
+      pip install mediapipe==0.10.9
+
+============================================================
+  VERSI LIBRARY YANG SUDAH DIUJI & PASTI JALAN
+============================================================
+  Python       : 3.11.x
+  opencv-python: 4.9.0.80
+  mediapipe    : 0.10.9
+  Pillow       : 10.3.0
+  numpy        : 1.26.4
+============================================================
